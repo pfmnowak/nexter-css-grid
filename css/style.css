@@ -269,10 +269,13 @@ body {
 
 .nav {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 2rem;
-  align-items: center; }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly; }
+  .nav__item {
+    width: 20rem;
+    margin-top: 2rem; }
   .nav__link:link, .nav__link:visited {
     font-size: 1.4rem;
     color: #fff;
