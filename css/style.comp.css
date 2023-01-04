@@ -7,7 +7,8 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 50%; } }
@@ -29,6 +30,10 @@ body {
   @media only screen and (max-width: 50em) {
     .container {
       grid-template-rows: 6rem calc(100vh - 6rem); } }
+
+::selection {
+  background-color: #000;
+  color: #c69963; }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -70,9 +75,13 @@ body {
   text-transform: uppercase;
   padding: 1.8rem 3rem;
   transition: all 0.2s;
-  cursor: pointer; }
+  cursor: pointer;
+  user-select: none; }
   .btn:hover {
     background-color: #b28451; }
+
+img {
+  user-select: none; }
 
 .mb-sm {
   margin-bottom: 2rem; }
@@ -397,12 +406,27 @@ body {
   grid-column: full-start / full-end;
   padding: 8rem; }
   .footer__link:link, .footer__link:visited {
-    color: #f9f7f6;
+    color: #fff;
     text-decoration: none;
     display: inline-block;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: 0.3rem; }
   .footer__link:hover, .footer__link:active {
-    color: #c69963; }
+    color: #b28451; }
+  .footer__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid #c69963;
+    transition: width 0.3s ease; }
+  .footer__link:hover::after {
+    left: 0;
+    width: 100%; }
 
 .nav {
   list-style: none;

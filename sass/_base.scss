@@ -31,13 +31,10 @@ $bp-small: 37.5em; // 600px
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 
 	@media only screen and (max-width: $bp-largest) {
 		font-size: 50%;
-	}
-
-	@media only screen and (max-width: $bp-large) {
-		// font-size: 45%;
 	}
 }
 
@@ -69,4 +66,9 @@ body {
 	@media only screen and (max-width: $bp-medium) {
 		grid-template-rows: 6rem calc(100vh - 6rem);
 	}
+}
+
+::selection {
+	background-color: #000;
+	color: $color-primary;
 }

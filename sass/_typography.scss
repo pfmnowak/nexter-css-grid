@@ -54,10 +54,15 @@
 	padding: 1.8rem 3rem;
 	transition: all 0.2s;
 	cursor: pointer;
+	user-select: none;
 
 	&:hover {
 		background-color: $color-primary-dark;
 	}
+}
+
+img {
+	user-select: none;
 }
 
 .mb-sm {
